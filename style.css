@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: #0d0d0d;
+  color: white;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  padding-top: 70px; /* merged fix */
+}
+
+/* 3D Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* 🔥 NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  overflow-x: hidden;
+}
+
+.logo {
+  color: cyan;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ✅ FIX NAVBAR PROPERLY */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  flex-wrap: nowrap; /* 🔥 prevent breaking */
+}
+
+/* Links */
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: cyan;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* HERO */
+.hero {
+  min-height: 75vh;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+/* ✅ spacing fix */
+.hero-buttons {
+  margin-top: 20px;
+}
+
+/* PROFILE IMAGE */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid cyan;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px cyan;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: black;
+  background: cyan;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px cyan;
+  transform: translateY(-2px);
+}
+
+/* OUTLINE BUTTON */
+.btn-outline {
+  background: transparent;
+  border: 2px solid cyan;
+  color: cyan;
+}
+
+.btn-outline:hover {
+  background: cyan;
+  color: black;
+}
+
+/* Layout */
+section {
+  padding: 60px 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 10px cyan;
+}
+
+h2 {
+  border-left: 4px solid cyan;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+/* Projects */
+.project {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+/* PROJECT BUTTONS */
+.project-links {
+  margin-top: 10px;
+}
+
+.mini-btn {
+  text-decoration: none;
+  color: cyan;
+  border: 1px solid cyan;
+  padding: 5px 10px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.mini-btn:hover {
+  background: cyan;
+  color: black;
+}
+
+/* 🔥 RESPONSIVE DESIGN */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .profile-img {
+    margin: auto;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  /* ✅ FIX NAVBAR MOBILE */
+  .nav-links {
+    flex-wrap: nowrap; /* no breaking */
+    overflow-x: auto;  /* scroll if needed */
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ✅ better profile size */
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* SKILLS */
+.skills {
+  margin: 20px 0 0 0;
+}
+
+.skills span {
+  display: inline-block;
+  border: 1px solid cyan;
+  padding: 8px 14px;
+  margin: 6px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 10px cyan;
+}
+
+/* ABOUT */
+#about p {
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+/* CONTACT */
+.contact-links p {
+  margin: 10px 0;
+}
+
+.contact-links a {
+  color: cyan;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-links a:hover {
+  text-shadow: 0 0 10px cyan;
+}
+
+#contact {
+  margin-bottom: 50px;
+}
+#about p {
+  font-size: 16px;      /* better readability */
+  opacity: 0.9;         /* already there, keep */
+  line-height: 1.8;     /* more breathing space */
+  max-width: 700px;     /* cleaner text width */
+}
+#about {
+  margin-top: 20px;
+}
+#about p {
+  letter-spacing: 0.3px;
+}
+#about p {
+  max-width: 650px;
+}
